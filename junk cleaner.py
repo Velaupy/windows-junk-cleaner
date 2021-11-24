@@ -90,9 +90,9 @@ def initiate():
     if settings["windowsupdate"]:
         print("cleaning windows update (stopping wuauserv)")
         cmd("net stop wuauserv")
-        print("cleaning windows update (removing softwaredistribution")
+        print("cleaning windows update (removing softwaredistribution)")
         cmd("rd /s /q %windir%\SoftwareDistribution")
-        print("cleaning windows update (clearing servicing\LCU")
+        print("cleaning windows update (clearing servicing\LCU)")
         clean("%windir%\servicing\LCU")
         print("cleaning windows update (cleaning up components with DISM)")
         cmd("dism /Online /Cleanup-Image /StartComponentCleanup /ResetBase")
